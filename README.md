@@ -14,6 +14,19 @@
 
 ---
 
+## 📸 Visual Showcase
+
+<p align="center">
+  <img src="docs/images/dashboard.png" width="800" alt="Carbon Setu Dashboard Mockup" />
+</p>
+
+<p align="center">
+  <img src="docs/images/ai_coach.png" width="400" alt="AI Climate Coach" />
+  <img src="docs/images/marketplace.png" width="400" alt="Sustainability Marketplace" />
+</p>
+
+---
+
 ## ✨ Key Features
 
 ### 📊 Advanced Analytics & Dashboard
