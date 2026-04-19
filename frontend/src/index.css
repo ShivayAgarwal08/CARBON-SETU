@@ -1,0 +1,171 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 1.125rem;
+    --background: 222 47% 5%;
+    --foreground: 0 0% 98%;
+    --card: 222 47% 8%;
+    --card-foreground: 0 0% 98%;
+    --popover: 222 47% 8%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 142 76% 55%;
+    --primary-foreground: 0 0% 0%;
+    --secondary: 222 47% 12%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 222 47% 12%;
+    --muted-foreground: 0 0% 60%;
+    --accent: 142 76% 55%;
+    --accent-foreground: 0 0% 0%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 222 47% 15%;
+    --input: 222 47% 15%;
+    --ring: 142 76% 55%;
+    --chart-1: 142 76% 55%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 173 58% 39%;
+    --chart-4: 197 37% 24%;
+    --chart-5: 220 13% 18%;
+
+    /* Carbon Tracker specific colors */
+    --carbon-dark: 222 47% 9%;
+    --carbon-green: 142 76% 55%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family:
+      "Inter",
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      "Roboto",
+      "Oxygen",
+      "Ubuntu",
+      "Cantarell",
+      sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family:
+      "Inter",
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .glass-card {
+    @apply bg-white/5 backdrop-blur-2xl border border-white/10;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+  }
+
+  .glass-card-premium {
+    @apply bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-3xl border border-white/20;
+    box-shadow: 0 12px 48px 0 rgba(0, 0, 0, 0.4);
+  }
+
+  .glass-card-hover {
+    @apply transition-all duration-500 hover:bg-white/10 hover:border-primary/40 hover:shadow-[0_0_40px_rgba(34,197,94,0.2)];
+  }
+
+  .green-glow {
+    @apply shadow-[0_0_20px_rgba(34,197,94,0.3)];
+  }
+
+  .green-glow-strong {
+    @apply shadow-[0_0_60px_rgba(34,197,94,0.4)];
+  }
+
+  .animated-bg {
+    background: radial-gradient(circle at 50% 50%, #1e293b 0%, #0f172a 100%);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .animated-bg::before {
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    background: radial-gradient(
+      circle at 50% 50%,
+      rgba(34, 197, 94, 0.05) 0%,
+      transparent 50%
+    );
+    animation: rotate 20s linear infinite;
+    z-index: 0;
+  }
+
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-white via-green-100 to-[#22c55e] bg-clip-text text-transparent;
+  }
+
+  .shimmer {
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.1),
+      transparent
+    );
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite;
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+
+  /* Floating label animation */
+  .floating-label {
+    @apply absolute left-3 transition-all duration-300 pointer-events-none;
+  }
+
+  .floating-label-active {
+    @apply top-2 text-xs text-[#22c55e];
+  }
+
+  .floating-label-inactive {
+    @apply top-4 text-sm text-gray-400;
+  }
+}
